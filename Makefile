@@ -14,12 +14,13 @@ PWD:=$(shell pwd)
 all: clean
 	wget --output-document=$(PWD)/ExpanDrive.AppImage  https://packages.expandrive.com/AppImage/ExpanDrive-7.6.3.AppImage
 	7z x $(PWD)/ExpanDrive.AppImage -o$(PWD)/AppDir
-	chmod +x $(PWD)/AppDir/usr/sbin
 	chmod +x $(PWD)/AppDir/expandrive*
 	chmod +x $(PWD)/AppDir/chrome-*
-	
+	chmod +x $(PWD)/AppDir/AppRun
+
 	export ARCH=x86_64 && $(PWD)/bin/appimagetool.AppImage $(PWD)/AppDir $(PWD)/ExpanDrive.AppImage
 	chmod +x $(PWD)/ExpanDrive.AppImage
+	# make clean
 
 clean:
 	rm -rf $(PWD)/AppDir
