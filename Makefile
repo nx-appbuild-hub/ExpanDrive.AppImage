@@ -12,7 +12,7 @@
 PWD:=$(shell pwd)
 
 all: clean
-	wget --output-document=$(PWD)/ExpanDrive.AppImage  https://packages.expandrive.com/AppImage/ExpanDrive-7.6.3.AppImage
+	wget --output-document=$(PWD)/ExpanDrive.AppImage  https://packages.expandrive.com/AppImage/ExpanDrive-2021.8.3.AppImage
 	7z x $(PWD)/ExpanDrive.AppImage -o$(PWD)/AppDir
 	chmod +x $(PWD)/AppDir/expandrive*
 	chmod +x $(PWD)/AppDir/chrome-*
